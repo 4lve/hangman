@@ -2,6 +2,9 @@
 
 ### This project was made at SVT during my work experience (PRAO in swedish)
 
+![prewiew](https://gcdnb.pbrd.co/images/AViHFvGV1N1I.png?o=1)
+
+
 ### Running the project
 
 * Clone this reop or download the zip file
