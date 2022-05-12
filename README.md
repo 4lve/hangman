@@ -28,7 +28,7 @@ const hangmanImg = [
     require('./img/8.jpg'),
     require('./img/9.jpg'),
     require('./img/10.jpg'),
-    require('./img/hang-gif.gif'),
+    require('./img/hang-gif.gif')
 ]
 ```
 
