@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Hangman By Alve
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### This project was made at SVT during my work experience (PRAO in swedish)
 
-## Available Scripts
+### Running the project
 
-In the project directory, you can run:
+* Clone this reop or download the zip file
+* Use `npm install` to install all dependencies
+* `npm start` will start a devlopment server
+* `npm build` to build the project
 
-### `npm start`
+### The code is made to be very customizible, some examples:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+All images can be changed and the code will adapt, even if you use less or more images.
+```javascript
+const hangmanImg = [
+    require('./img/0.jpg'),
+    require('./img/1.jpg'),
+    require('./img/2.jpg'),
+    require('./img/3.jpg'),
+    require('./img/4.jpg'),
+    require('./img/5.jpg'),
+    require('./img/6.jpg'),
+    require('./img/7.jpg'),
+    require('./img/8.jpg'),
+    require('./img/9.jpg'),
+   require('./img/10.jpg'),
+    require('./img/hang-gif.gif'),
+]
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Customiable default tries
+```javascript
+const [triesLeft, setTriesLeft] = useState(6);
+```
 
-### `npm test`
+Customizable Button Colors in `themeOptions.js` using Material UI (mui)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Customizable word generator, The return should be a uppercased word
+```javascript
+// Get a random word from the API
+const generateWord = async () => {
+    console.log('Generating word...');
+    const res = await axios.get('https://random-words-api.vercel.app/word')
+    return res.data[0].word.toUpperCase();
+}
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Keyboard Buttons and accepted characters can be changed in:
+```javascript
+const alphabet = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+```
+Note: Order matters
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Keyboard seperation: (This will separate the keyboard at key 10 and 19)
+```javascript
+if (index === 10 || index === 19)
+```
