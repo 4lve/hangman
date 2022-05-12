@@ -29,7 +29,7 @@ function App() {
 
   const [guesses, setGuesses] = useState([]);
   const [word, setWord] = useState('LOADING WORD'); //Needs to be uppercase else you won't be able to win
-  const [tries, setTries] = useState(6);
+  const [tries, setTries] = useState(defaultTries);
   const [dialogOpen, setdialogOpen] = useState(false);
   const alphabet = 'QWERTYUIOPASDFGHJKLZXCVBNM';
   const [image, setImage] = useState(hangmanImg[0]);
@@ -162,7 +162,7 @@ function App() {
             disabled={guesses.length > 0}
             min={1}
             max={20}
-            style={{ width: '10%' }}
+            style={{ width: '15%' }}
             onChange={(e, value) => {
               setTries(value)
               setTriesLeft(value)

@@ -24,14 +24,14 @@ const hangmanImg = [
     require('./img/7.jpg'),
     require('./img/8.jpg'),
     require('./img/9.jpg'),
-   require('./img/10.jpg'),
+    require('./img/10.jpg'),
     require('./img/hang-gif.gif'),
 ]
 ```
 
 Customiable default tries
 ```javascript
-const [triesLeft, setTriesLeft] = useState(6);
+const defaultTries = 6;
 ```
 
 Customizable Button Colors in `themeOptions.js` using Material UI (mui)
@@ -41,7 +41,6 @@ Customizable word generator, The return should be a uppercased word
 ```javascript
 // Get a random word from the API
 const generateWord = async () => {
-    console.log('Generating word...');
     const res = await axios.get('https://random-words-api.vercel.app/word')
     return res.data[0].word.toUpperCase();
 }
