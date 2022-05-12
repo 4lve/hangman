@@ -11,7 +11,7 @@
 
 ### The code is made to be very customizible, some examples:
 
-All images can be changed and the code will adapt, even if you use less or more images.
+All images can be changed and the code will adapt, even if you use less or more images. Also supprts image urls.
 ```javascript
 const hangmanImg = [
     require('./img/0.jpg'),

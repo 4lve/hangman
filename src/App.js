@@ -116,7 +116,7 @@ function App() {
     <ThemeProvider theme={themeOptions}>
       <Box className='app' m={'10%'} >
 
-        <GameDialog dialogOpen={dialogOpen} resetGame={resetGame} dialogText={dialogText} />
+        <GameDialog dialogOpen={dialogOpen} resetGame={resetGame} dialogText={dialogText} img={hangmanImg[hangmanImg.length - 1]} />
 
         <h2>Hangman by Alve</h2>
         <div>
